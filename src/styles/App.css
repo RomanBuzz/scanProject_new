@@ -1,0 +1,187 @@
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    src: local('Inter Regular'), local('Inter-Regular'),
+        url('../fonts/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    src: local('Inter Medium'), local('Inter-Medium'),
+        url('../fonts/Inter-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    src: local('Inter SemiBold'), local('Inter-SemiBold'),
+        url('../fonts/Inter-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    src: local('Inter Bold'), local('Inter-Bold'),
+        url('../fonts/Inter-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Ferry";
+    font-style: normal;
+    src: local('Ferry Black'), local('Ferry-Black'),
+        url('../fonts/ferry_black.otf') format('truetype');
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #FFFFFF;
+}
+
+main {
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1440px;
+}
+
+main .group_name {
+    font-family: Ferry, sans-serif;
+    font-weight: 900;
+}
+
+main .text_info_bold {
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+}
+
+main .text_info {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #24a3f1;
+    text-decoration: underline;
+}
+
+@-webkit-keyframes rotation {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes rotation {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes rotation {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotation {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(720deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@media (width <=450px) {
+    main {
+        width: 375px;
+    }
+}
+
+@media (width <=450px) and (width > 375px) {
+    body #root {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        width: 100vw !important;
+    }
+
+    header.header__content .mobile-menu {
+        width: 100vw !important;
+    }
+
+    header.header__content .mobile-menu::after {
+        width: 100vw !important;
+        left: 100vw !important;
+    }
+
+    header.header__content .mobile-menu.active::after {
+        left: 0 !important;
+    }
+
+    header.header__content .mobile-menu .header__logo {
+        width: 100vw !important;
+    }
+
+    footer {
+        width: 100vw !important;
+    }
+}
