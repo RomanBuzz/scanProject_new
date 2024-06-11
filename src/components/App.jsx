@@ -23,8 +23,18 @@ function App() {
         }
     }
 
+    const handleResize = () => {
+        if (window.innerWidth > 600 && window.innerWidth <= 1800) {
+            document.body.style.transform = `scale(${window.innerWidth / 1440})`;
+        } else if (window.innerWidth >= 280 && window.innerWidth <= 600) {
+            document.body.style.transform = `scale(${window.innerWidth / 375})`;
+        }
+    }
+
     React.useEffect(() => {
         auth();
+        handleResize();
+        window.addEventListener('resize', handleResize);
     }, []);
 
     return (

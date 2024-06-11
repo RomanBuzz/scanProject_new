@@ -4,8 +4,8 @@ const requestButton = (formElement, setRequest) => {
         let inn = formElement.querySelector('.form .group_1 .input_elem').value.replace(/[\s]+/g, '');
         let tonality = formElement.querySelector('.form .group_2 .input_elem').value;
         let limit = formElement.querySelector('.form .group_3 .input_elem').value;
-        let startDate = formElement.querySelector('.form .group_4 .input_elem:nth-child(1)').value;
-        let endDate = formElement.querySelector('.form .group_4 .input_elem:nth-child(2)').value;
+        let startDate = formElement.querySelector('.form .group_4 .calendar.start_date').value;
+        let endDate = formElement.querySelector('.form .group_4 .calendar.finish_date').value;
         let maxFullness = formElement.querySelector('.form .checkbox_list #checkbox_01').checked;
         let inBusinessNews = formElement.querySelector('.form .checkbox_list #checkbox_02').checked;
         let onlyMainRole = formElement.querySelector('.form .checkbox_list #checkbox_03').checked;

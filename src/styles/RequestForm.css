@@ -182,12 +182,12 @@
 
 .request__page .block.block--bottom .form_block .form .column.column--left .info_group .range_error {
     width: 372px;
-    top: 454px;
+    top: 101px;
 }
 
 .request__page .block.block--bottom .form_block .form .column.column--left .info_group .range_empty {
     width: 372px;
-    top: 454px;
+    top: 101px;
 }
 
 .request__page .block.block--bottom .form_block .form .column.column--left .info_group .input_elem.elem_1 {
@@ -228,6 +228,7 @@
 }
 
 .request__page .block.block--bottom .form_block .form .column.column--left .group_4 {
+    position: relative;
     height: 94px;
 }
 
@@ -235,33 +236,22 @@
     margin-left: -1px;
 }
 
-.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div input[type="date"] {
-    position: relative;
-    outline: 0;
-}
-
-.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div input[type="date"]:nth-child(2) {
-    margin-left: 20px;
-}
-
-.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div input[type="date"]::-webkit-calendar-picker-indicator {
-    background: url("../images/input-arrow.svg") no-repeat 146px center;
+.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .place_holder {
+    width: 176px;
+    height: 43px;
+    padding-left: 44px;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: left;
+    justify-content: flex-start;
+    border: none;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    color: transparent;
+    display: none;
     cursor: pointer;
-    height: auto;
-    width: auto;
-}
-
-.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div input[type="date"]:invalid::before {
-    content: attr(placeholder);
-    margin-left: 22px;
-    color: #949494;
-    opacity: 40%;
+    user-select: none;
+    z-index: 1;
+    background: transparent url("../images/input-arrow.svg") no-repeat 146px center;
+    color: rgba(148, 148, 148, 0.4);
     font-family: Inter, sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -269,9 +259,53 @@
     letter-spacing: 0.42px;
 }
 
-.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div input[type="date"]:invalid::-webkit-datetime-edit {
-    -webkit-appearance: none;
+.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .calendar,
+.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .calendar.error {
+    color: transparent;
+    user-select: none;
+    z-index: 0;
+}
+
+.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .calendar::-webkit-calendar-picker-indicator,
+.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .calendar::-webkit-datetime-edit {
     display: none;
+    visibility: hidden;
+}
+
+.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .calendar.start_date {
+    position: absolute;
+    top: 51px;
+    left: 0px;
+}
+
+.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .calendar+.place_holder.start_date {
+    display: flex;
+    top: 51px;
+    left: 0px;
+}
+
+.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .calendar.finish_date {
+    position: absolute;
+    top: 51px;
+    left: 196px;
+}
+
+.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .calendar+.place_holder.finish_date {
+    display: flex;
+    top: 51px;
+    left: 196px;
+}
+
+.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .calendar.content+.place_holder {
+    padding-left: 17px;
+}
+
+.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .calendar.content:not(.error)+.place_holder {
+    color: #000000;
+}
+
+.request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .calendar.error+.place_holder {
+    color: #FF5959;
 }
 
 .request__page .block.block--bottom .form_block .form .column.column--right {
@@ -288,43 +322,33 @@
     height: 244px;
 }
 
-.request__page .block.block--bottom .form_block .form .column.column--right .checkbox_list div {
-    display: flex;
-    white-space: nowrap;
-}
-
 .request__page .block.block--bottom .form_block .form .column.column--right .checkbox_list input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    align-self: center;
-    position: relative;
-    cursor: pointer;
+    display: none;
+    visibility: hidden;
 }
 
-.request__page .block.block--bottom .form_block .form .column.column--right .checkbox_list input[type="checkbox"]::before {
+.request__page .block.block--bottom .form_block .form .column.column--right .checkbox_list input[type="checkbox"]+label>div {
+    box-sizing: border-box;
     width: 20px;
     height: 20px;
-    content: "";
-    display: block;
-    position: absolute;
+    margin-right: 17px;
     border: 1px solid rgba(0, 0, 0, 0.4);
     background: #FFFFFF;
 }
 
-.request__page .block.block--bottom .form_block .form .column.column--right .checkbox_list input[type="checkbox"]:checked::before {
-    width: 20px;
-    height: 20px;
-    content: "";
-    display: block;
-    position: absolute;
+.request__page .block.block--bottom .form_block .form .column.column--right .checkbox_list input[type="checkbox"]:checked+label>div {
     border: 1px solid rgba(0, 0, 0, 1);
     background: #FFFFFF url("../images/check-mark_small.svg") no-repeat center center;
 }
 
 .request__page .block.block--bottom .form_block .form .column.column--right .checkbox_list .info_label {
-    align-self: center;
-    margin-left: 17px;
     cursor: pointer;
+    width: 420px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
 }
 
 .request__page .block.block--bottom .form_block .form .column.column--right .checkbox_list input[type="checkbox"]:not(:checked)+label {
@@ -388,7 +412,7 @@
     height: 470.21px;
 }
 
-@media (width <=450px) {
+@media (width <=600px) {
     .request__page {
         width: 375px;
         height: 1357.28px;
@@ -486,12 +510,12 @@
 
     .request__page .block.block--bottom .form_block .form .column.column--left .info_group .range_error {
         width: 335px;
-        top: 506px;
+        top: 162px;
     }
 
     .request__page .block.block--bottom .form_block .form .column.column--left .info_group .range_empty {
         width: 335px;
-        top: 506px;
+        top: 162px;
     }
 
     .request__page .block.block--bottom .form_block .form .column.column--left .info_group .input_elem.elem_1 {
@@ -521,19 +545,27 @@
         height: 106px;
     }
 
-    .request__page .block.block--bottom .form_block .form .column.column--left .group_4 div input[type="date"]:nth-child(2) {
-        margin-left: 0px;
-    }
-
-    .request__page .block.block--bottom .form_block .form .column.column--left .group_4 div input[type="date"]::-webkit-calendar-picker-indicator {
-        background: url("../images/input-arrow.svg") no-repeat 300px center;
-    }
-
-    .request__page .block.block--bottom .form_block .form .column.column--left .group_4 div input[type="date"]:invalid::before {
-        margin-left: -22px;
+    .request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .place_holder {
+        width: 335px;
+        padding-left: 0px;
+        justify-content: center;
+        background: transparent url("../images/input-arrow.svg") no-repeat 300px center;
         letter-spacing: 0.28px;
-        text-align: center;
-        display: block;
+    }
+
+    .request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .calendar.finish_date {
+        top: 114px;
+        left: 0px;
+    }
+
+    .request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .calendar+.place_holder.finish_date {
+        top: 114px;
+        left: 0px;
+    }
+
+    .request__page .block.block--bottom .form_block .form .column.column--left .group_4 div .calendar.content+.place_holder {
+        padding-left: 17px;
+        justify-content: flex-start;
     }
 
     .request__page .block.block--bottom .form_block .form .column.column--right {

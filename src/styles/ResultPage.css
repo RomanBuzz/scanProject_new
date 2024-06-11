@@ -15,7 +15,7 @@
 }
 
 .result_page__group_1 .column.column--left {
-    width: 509px;
+    width: 530px;
     height: 180px;
 }
 
@@ -112,6 +112,7 @@
 .result_page__group_2 .carousel .tabs-collection {
     display: flex;
     justify-content: flex-start;
+    box-sizing: border-box;
     width: 1260px;
     border: 2px solid #029491;
     border-radius: 10px;
@@ -144,10 +145,6 @@
     -moz-animation-duration: 5s;
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: linear;
-    -o-animation-name: rotation;
-    -o-animation-duration: 5s;
-    -o-animation-iteration-count: infinite;
-    -o-animation-timing-function: linear;
     animation-name: rotation;
     animation-duration: 5s;
     animation-iteration-count: infinite;
@@ -171,7 +168,7 @@
     justify-content: space-around;
     align-self: start;
     background: #029491;
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 7px 0px 0px 7px;
 }
 
 .result_page__group_2 .carousel .tabs-description__item>div {
@@ -275,6 +272,8 @@
     color: #949494;
     margin-left: 14px;
     text-decoration: underline;
+    height: 38px;
+    overflow: hidden;
 }
 
 .result_page__group_3 .tabs-collection .tabs-collection__item .content_column .article__header {
@@ -388,7 +387,7 @@
     background: #4d61df;
 }
 
-@media (width <=450px) {
+@media (width <=600px) {
     .result_page__group_1 {
         flex-direction: column;
         width: 361px;
@@ -399,7 +398,7 @@
     }
 
     .result_page__group_1 .column.column--left {
-        width: 344px;
+        width: 351px;
         height: 133px;
     }
 
@@ -464,12 +463,18 @@
         width: 298px;
         height: 140px;
         flex-direction: column;
+        margin-left: -0.5px;
+    }
+
+    .result_page__group_2 .carousel .carousel__arrow.arrow_right {
+        margin-left: -0.5px;
     }
 
     .result_page__group_2 .carousel .tabs-description__item {
         width: 298px;
         height: 75px;
-        margin-left: -1px;
+        margin-left: -2px;
+        margin-top: -1px;
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
@@ -602,6 +607,7 @@
 
     .result_page__group_3 .tabs-collection .tabs-collection__item .content_column .article__source>a {
         margin-left: 9px;
+        height: 34px;
     }
 
     .result_page__group_3 .tabs-collection .tabs-collection__item .content_column .article__header {

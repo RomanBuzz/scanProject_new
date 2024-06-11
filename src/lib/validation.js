@@ -41,7 +41,7 @@ const testInn = (formElement) => {
     let innError = formElement.querySelector('.form .inn_error');
     let innEmpty = formElement.querySelector('.form .inn_empty');
     let formButton = formElement.querySelector('.form .form_button');
-    let value = innInput.value.replace(/[\s]+/g, '');
+    let value = innInput.value.replace(/[\s]+/g, '').substring(0, 10);
     if (value.length == 0) {
         asterisk.classList.add('error');
         innInput.classList.add('error');
@@ -100,14 +100,30 @@ const testQuantity = (formElement) => {
 
 const testDate = (formElement) => {
     let asterisk = formElement.querySelector('.form .group_4 .label_group .elem_2');
-    let startDate = formElement.querySelector('.form .group_4 .input_elem:nth-child(1)');
-    let endDate = formElement.querySelector('.form .group_4 .input_elem:nth-child(2)');
+    let startDate = formElement.querySelector('.form .group_4 .calendar.start_date');
+    let endDate = formElement.querySelector('.form .group_4 .calendar.finish_date');
+    let startDatePlaceHolder = formElement.querySelector('.form .group_4 .place_holder.start_date');
+    let endDatePlaceHolder = formElement.querySelector('.form .group_4 .place_holder.finish_date');
     let rangeError = formElement.querySelector('.form .range_error');
     let rangeEmpty = formElement.querySelector('.form .range_empty');
     let formButton = formElement.querySelector('.form .form_button');
     let startDateValue = new Date(startDate.value);
     let endDateValue = new Date(endDate.value);
     let currentDateValue = new Date();
+    if (startDate.value.length > 0) {
+        startDatePlaceHolder.innerHTML = new Date(startDate.value).toLocaleDateString();
+        startDate.classList.add('content');
+    } else {
+        startDatePlaceHolder.innerHTML = "Дата начала";
+        startDate.classList.remove('content');
+    }
+    if (endDate.value.length > 0) {
+        endDatePlaceHolder.innerHTML = new Date(endDate.value).toLocaleDateString();
+        endDate.classList.add('content');
+    } else {
+        endDatePlaceHolder.innerHTML = "Дата конца";
+        endDate.classList.remove('content');
+    }
     if (startDateValue > currentDateValue || endDateValue > currentDateValue
         || startDateValue > endDateValue) {
         asterisk.classList.add('error');

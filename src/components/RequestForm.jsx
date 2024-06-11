@@ -47,7 +47,7 @@ function RequestForm() {
                                                 <div className="elem_2">*</div>
                                             </label>
                                             <input className="input_elem elem_1" type="text" name="inn" placeholder="10 цифр"
-                                                onKeyUpCapture={() => testInn(formElement)} />
+                                                onInputCapture={() => testInn(formElement)} />
                                             <div className="inn_error error_text">Введите корректные данные</div>
                                             <div className="inn_empty error_text">Обязательное поле</div>
                                         </div>
@@ -65,7 +65,7 @@ function RequestForm() {
                                                 <div className="elem_2">*</div>
                                             </label>
                                             <input className="input_elem elem_1" type="text" name="doc_number" placeholder="От 1 до 1000"
-                                                onKeyUpCapture={() => testQuantity(formElement)} />
+                                                onInputCapture={() => testQuantity(formElement)} />
                                             <div className="quantity_error error_text">Введите корректные данные</div>
                                             <div className="quantity_empty error_text">Обязательное поле</div>
                                         </div>
@@ -75,12 +75,16 @@ function RequestForm() {
                                                 <div className="elem_2">*</div>
                                             </label>
                                             <div>
-                                                <input className="input_elem elem_2" type="date"
-                                                    name="start_date" placeholder="Дата начала"
-                                                    onChange={() => testDate(formElement)} />
-                                                <input className="input_elem elem_2" type="date"
-                                                    name="finish_date" placeholder="Дата конца"
-                                                    onChange={() => testDate(formElement)} />
+                                                <input className="input_elem elem_2 calendar start_date" type="date"
+                                                    onInputCapture={() => testDate(formElement)} />
+                                                <div className="place_holder start_date"
+                                                    onClick={() => formElement.querySelector('.form .group_4 .calendar.start_date').showPicker()}
+                                                >Дата начала</div>
+                                                <input className="input_elem elem_2 calendar finish_date" type="date"
+                                                    onInputCapture={() => testDate(formElement)} />
+                                                <div className="place_holder finish_date"
+                                                    onClick={() => formElement.querySelector('.form .group_4 .calendar.finish_date').showPicker()}
+                                                >Дата конца</div>
                                             </div>
                                             <div className="range_error error_text">Введите корректные данные</div>
                                             <div className="range_empty error_text">Обязательное поле</div>
@@ -90,31 +94,38 @@ function RequestForm() {
                                         <div className="checkbox_list">
                                             <div>
                                                 <input type="checkbox" id="checkbox_01" name="checkbox_01" />
-                                                <label className="info_label text_info" htmlFor="checkbox_01">Признак максимальной полноты</label>
+                                                <label className="info_label text_info" htmlFor="checkbox_01">
+                                                    <div></div>Признак максимальной полноты</label>
                                             </div>
                                             <div>
                                                 <input type="checkbox" id="checkbox_02" name="checkbox_02" />
-                                                <label className="info_label text_info" htmlFor="checkbox_02">Упоминания в бизнес-контексте</label>
+                                                <label className="info_label text_info" htmlFor="checkbox_02">
+                                                    <div></div>Упоминания в бизнес-контексте</label>
                                             </div>
                                             <div>
                                                 <input type="checkbox" id="checkbox_03" name="checkbox_03" />
-                                                <label className="info_label text_info" htmlFor="checkbox_03">Главная роль в публикации</label>
+                                                <label className="info_label text_info" htmlFor="checkbox_03">
+                                                    <div></div>Главная роль в публикации</label>
                                             </div>
                                             <div>
                                                 <input type="checkbox" id="checkbox_04" name="checkbox_04" />
-                                                <label className="info_label text_info" htmlFor="checkbox_04">Публикации только с риск-факторами</label>
+                                                <label className="info_label text_info" htmlFor="checkbox_04">
+                                                    <div></div>Публикации только с риск-факторами</label>
                                             </div>
                                             <div>
                                                 <input type="checkbox" id="checkbox_05" name="checkbox_05" />
-                                                <label className="info_label text_info" htmlFor="checkbox_05">Включать технические новости рынков</label>
+                                                <label className="info_label text_info" htmlFor="checkbox_05">
+                                                    <div></div>Включать технические новости рынков</label>
                                             </div>
                                             <div>
                                                 <input type="checkbox" id="checkbox_06" name="checkbox_06" />
-                                                <label className="info_label text_info" htmlFor="checkbox_06">Включать анонсы и календари</label>
+                                                <label className="info_label text_info" htmlFor="checkbox_06">
+                                                    <div></div>Включать анонсы и календари</label>
                                             </div>
                                             <div>
                                                 <input type="checkbox" id="checkbox_07" name="checkbox_07" />
-                                                <label className="info_label text_info" htmlFor="checkbox_07">Включать сводки новостей</label>
+                                                <label className="info_label text_info" htmlFor="checkbox_07">
+                                                    <div></div>Включать сводки новостей</label>
                                             </div>
                                         </div>
                                         <div className="button_block">

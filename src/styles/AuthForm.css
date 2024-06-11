@@ -1,8 +1,10 @@
 .auth__page {
     display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
     width: 1239px;
     height: 578px;
-    justify-content: space-between;
     margin-left: 60px;
     margin-top: 14px;
     margin-bottom: 80px;
@@ -14,11 +16,12 @@
 }
 
 .auth__page .column.column--left {
-    width: 755px;
+    width: 817px;
+    height: 578px;
 }
 
 .auth__page .column.column--left .service_name {
-    width: 755px;
+    width: 817px;
     height: 144px;
     font-size: 40px;
     line-height: 48px;
@@ -35,7 +38,9 @@
 }
 
 .auth__page .column.column--right {
-    position: relative;
+    position: absolute;
+    left: 759px;
+    top: 0px;
     width: 480px;
     height: 578px;
 }
@@ -250,12 +255,9 @@
     cursor: pointer;
 }
 
-@media (width <=450px) {
+@media (width <=600px) {
     .auth__page {
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        position: relative;
         width: 361px;
         height: 1139.1px;
         margin-left: 14px;
@@ -292,7 +294,8 @@
     .auth__page .column.column--right {
         width: 335px;
         height: 585px;
-        margin-top: 45px;
+        left: 0px;
+        top: 149px;
     }
 
     .auth__page .column.column--right .lock_img {

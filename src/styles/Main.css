@@ -1,9 +1,12 @@
 .main__group_1 {
     display: flex;
-    width: 1320px;
     justify-content: space-between;
+    width: 1320px;
+    height: 620px;
+    margin-left: 60px;
     margin-top: 24px;
     margin-bottom: 109px;
+    position: relative;
 }
 
 .main__group_1 .column {
@@ -12,20 +15,21 @@
 }
 
 .main__group_1 .column.column--left {
-    width: 743px;
+    width: 760px;
 }
 
 .main__group_1 .column.column--left h1 {
-    width: 743px;
+    width: 760px;
     height: 288px;
     font-size: 60px;
     line-height: 72px;
     letter-spacing: 0.6px;
     margin-bottom: 0;
     margin-top: 45px;
+    z-index: 1;
 }
 
-.main__group_1 .column.column--left div {
+.main__group_1 .column.column--left>div {
     width: 534px;
     height: 48px;
     font-size: 20px;
@@ -55,9 +59,10 @@
 .main__group_1 .column.column--right {
     width: 629px;
     height: 620px;
-    margin-left: -52px;
-    overflow: hidden;
-    border-radius: 200px;
+    position: absolute;
+    z-index: 0;
+    left: 691px;
+    top: 0px;
 }
 
 .main__group_2 {
@@ -68,6 +73,7 @@
     align-items: flex-start;
     width: 1346px;
     height: 349px;
+    margin-left: 51px;
     margin-bottom: 70px;
 }
 
@@ -145,6 +151,7 @@
     align-items: center;
     width: 1307px;
     height: 575.52px;
+    margin-left: 51px;
     margin-bottom: 107.48px;
 }
 
@@ -156,6 +163,7 @@
     align-items: flex-start;
     width: 1320px;
     height: 664px;
+    margin-left: 60px;
     margin-bottom: 118px;
 }
 
@@ -180,6 +188,7 @@
 .main__group_4 .tabs-collection {
     display: flex;
     justify-content: space-between;
+    box-sizing: border-box;
     width: 1320px;
 }
 
@@ -207,12 +216,9 @@
     height: 132px;
     display: flex;
     position: relative;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.main__group_4 .tabs-collection__item.selected .tariff__header {
-    margin-left: -2px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    margin-top: -1px;
 }
 
 .main__group_4 .tabs-collection__item .tariff__header .tariff_info {
@@ -415,10 +421,11 @@
     background-color: #bdbdbd;
 }
 
-@media (width <=450px) {
+@media (width <=600px) {
     .main__group_1 {
         flex-direction: column;
         width: 361px;
+        height: 678.6px;
         justify-content: flex-start;
         margin-top: 20px;
         margin-left: 14px;
@@ -461,13 +468,14 @@
     .main__group_1 .column.column--right {
         width: 347.18px;
         height: 342.21px;
-        margin-left: 0px;
-        margin-top: 24.39px;
+        left: 0px;
+        top: 336.39px;
     }
 
     .main__group_2 {
         width: 375px;
         height: auto;
+        margin-left: 0px;
         margin-bottom: 80px;
     }
 

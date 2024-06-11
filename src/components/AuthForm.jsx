@@ -49,11 +49,11 @@ function AuthForm(props) {
                         <div className="form text_info" ref={(element) => { formElement = element }}>
                             <label className="info_label">Логин или номер телефона:</label>
                             <input className="login_input" type="text" name="auth_name"
-                                onKeyUpCapture={() => testLogin(formElement)} />
+                                onInputCapture={() => testLogin(formElement)} />
                             <div className="login_error">Введите корректные данные</div>
                             <label className="info_label">Пароль:</label>
                             <input className="password_input" type="password" name="auth_pass"
-                                onKeyUpCapture={() => testPassword(formElement)} />
+                                onInputCapture={() => testPassword(formElement)} />
                             <div className="password_error">Неправильный пароль</div>
                             <button className="form_auth_button text_info_bold" onClick={formFunc}>Войти</button>
                             <a>Восстановить пароль</a>
