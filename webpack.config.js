@@ -4,10 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 let config = {
   entry: './src/index.jsx',
   output: {
-    path: path.join(__dirname, "/dist"),
-    filename: 'bundle.js',
-    assetModuleFilename: path.join('images', '[name].[contenthash][ext]'),
-    publicPath: '/'
+    path: path.join(__dirname, "/docs"),
+    filename: "bundle.js",
+    assetModuleFilename: path.join('assets', '[name][ext]'),
   },
   performance: {
     maxEntrypointSize: 512000,
@@ -22,7 +21,7 @@ let config = {
       ),
   ],
   resolve: {
-    extensions: [".json", ".js", ".jsx", "png", "jpg", "jpeg", "gif", "svg",]
+    extensions: [".json", ".js", ".jsx", ".css", ".png", ".jpg", ".jpeg", ".gif", ".svg", ".woff", ".woff2", ".eot", ".ttf", ".otf"]
   },
   module: {
     rules: [
@@ -39,15 +38,12 @@ let config = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(png|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
       },
       {
-        test: /\.svg$/,
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
-        generator: {
-          filename: path.join('icons', '[name].[contenthash][ext]'),
-        },
       },
     ]
   }
@@ -56,14 +52,18 @@ let config = {
 module.exports = (env, argv) => {
   if (argv.mode === 'production') {
     config.devServer = {
-      static: './dist',
+      static: {
+        directory: path.join(__dirname, "/docs"),
+      },
       hot: false,
       historyApiFallback: true,
     };
   } else {
     config.mode = "development";
     config.devServer = {
-      static: './dist',
+      static: {
+        directory: path.join(__dirname, "/docs"),
+      },
       hot: true,
       historyApiFallback: true,
     };
